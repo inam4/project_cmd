@@ -8,7 +8,10 @@
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #535554;
+            background-color: hsl(0, 0%, 0%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         .topnav {
@@ -38,11 +41,13 @@
         }
 
         .flex-container .image {
-            height: 79%;
+
+            height: 50%;
             width: 97%;
             position: absolute;
             /* margin: 10px; */
             background-image: url('pageimage.png');
+            
             background-repeat: no-repeat;
             filter: blur(2px);
             z-index: -1;
@@ -50,12 +55,15 @@
         }
 
         .flex-container>div {
+
+            
             display: flex;
             margin-top: 0%;
             padding: 20px;
         }
 
         .flex-container>h1 {
+            
             padding: 0% 45% 0% 45%;
             position: absolute;
             color: #f1f1f1;
@@ -64,14 +72,16 @@
         }
 
         .info>div>h3 {
+            
             text-align: center;
         }
 
         .info>div {
+         
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
-           flex-direction: row;
+            flex-direction: row;
             margin: 6%;
             /* padding: 10px 15px; */
             font-size: 30px;
@@ -87,32 +97,106 @@
             /* padding: 30px; */
         }
 
-        .bottom-bar {
-            border: 1px solid rgb(236, 180, 26);
-            position: relative;
-            margin-top: 140px;
-            text-align: center;
-
-        }
 
         .box {
-            
-            background-color: #f1f1f1;
+            filter: drop-shadow(10px 10px 0px #f1f1f2);
+
+            background-color: #a7a5a5;
             border-radius: 5%;
             opacity: 0.5;
-            position:relative;
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            flex-direction: row;
+            flex-direction: column;
             /* width: 13.4%;
             top: 21%;
             height: 19%;
             padding: 50px;
             margin: 20px; */
             z-index: -1;
+
+        }
+
+        .bottom-bar {
+            border: 1px solid rgb(236, 180, 26);
+            position: relative;
+            margin-top: auto;
+            text-align: center;
+            color:#f1f1f1;
+
+        }
+
+        #table_info {
+            font-family: Arial, Helvetica, sans-serif;
+            width: 50%;
+            position: relative;
+            top: -40px;
+            left: 25%;
+
+        }
+
+        #table_info td,
+        #table_info th {
+            border: 1px solid #ddd;
+            border-style:initial;
+            padding: 8px;
             
+        }
+
+        #table_info tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #table_info tr:hover {
+            background-color: #ddd;
+        }
+
+        #table_info th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #414141;
+            color: white;
+        }
+
+        .form_contact > h1
+        {
+            text-align: center;
+            color:#f1f1f1 ;
+        }
+
+        input[type=text],
+        select {
+            display: inline-flex;
+            
+            width: 25%;
+            padding: 12px 25px;
+            margin-left:2%;
+        
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-sizing:border-box;
+        }
+
+        input[type=submit] {
+         
+            width: 25%;
+            background-color: #535554;
+            color: white;
+            padding: 14px 20px;
+            position: relative;
+            left: 39.2%;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #c2cac6;
+            color:#535554;
         }
     </style>
 </head>
@@ -120,7 +204,7 @@
 <body>
     <div class="topnav">
         <a class="active" href="#home">Home</a>
-        <a href="#news">News</a>
+        <a href="#Services">Services</a>
         <a href="#contact">Contact</a>
         <a href="#about">About</a>
     </div>
@@ -128,23 +212,15 @@
 
 
     <div class="flex-container">
-        <h1 style="text-align: center;"> Code</h1>
+        <h1 style="text-align: center;">Solutions</h1>
         <div class="image">
 
         </div>
         <div class="info">
             <div>
-                <div class="box" >
-                    <!-- <div class="box"></div> -->
-                    <h3>Lorem</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum debitis sapiente quia incidunt
-                        odit, ratione alias vitae obcaecati nisi vero</p>
-                </div>
-            </div>
-
-            <div>
                 <div class="box">
-                    <h3>Lorem</h3>
+                    <!-- <div class="box"></div> -->
+                    <h3>Creative</h3>
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum debitis sapiente quia incidunt
                     odit, ratione alias vitae obcaecati nisi vero
                 </div>
@@ -152,15 +228,54 @@
 
             <div>
                 <div class="box">
-                    
-                    <h3>Lorem</h3>
+                    <h3>Web Soltuions</h3>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum debitis sapiente quia incidunt
+                    odit, ratione alias vitae obcaecati nisi vero
+                </div>
+            </div>
+
+            <div>
+                <div class="box">
+                    <h3>Digital Marketing</h3>
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum debitis sapiente quia incidunt
                     odit, ratione alias vitae obcaecati nisi vero
                 </div>
             </div>
         </div>
     </div>
+ 
+    <table id="table_info">
+        <tr>
+            <th>Person of Contact</th>
+            <th>Contact</th>
 
+        </tr>
+        <tr>
+            <td>Zain</td>
+            <td>090078601</td>
+
+        </tr>
+    </table>
+
+    <div>
+        <form style="color: #f1f1f1;" class="form_contact" >
+            <h1 >Contact us</h1>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="John Wick">
+
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Your email">
+
+            <label for="country">Country</label>
+            <select id="country" name="country">
+                <option value="australia">Australia</option>
+                <option value="canada">Canada</option>
+                <option value="usa">USA</option>
+            </select>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
     <div class="bottom-bar">
 
         © 2023 Code Basti.All rights reserved.
