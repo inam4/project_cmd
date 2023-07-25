@@ -4,201 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>Code Basti</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: hsl(0, 0%, 0%);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+    <link rel="stylesheet" type="text/css" href="styles.css">
 
-        .topnav {
-            overflow: hidden;
-            background-color: #1e1f2bf5;
-            border-radius: 10%;
-            position: sticky;
-        }
-
-        .topnav a {
-            float: left;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-        }
-
-        .topnav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        .topnav a.active {
-            background-color: #535554;
-            color: white;
-        }
-
-        .flex-container .image {
-
-            height: 50%;
-            width: 97%;
-            position: absolute;
-            /* margin: 10px; */
-            background-image: url('pageimage.png');
-            
-            background-repeat: no-repeat;
-            filter: blur(2px);
-            z-index: -1;
-            top: 0;
-        }
-
-        .flex-container>div {
-
-            
-            display: flex;
-            margin-top: 0%;
-            padding: 20px;
-        }
-
-        .flex-container>h1 {
-            
-            padding: 0% 45% 0% 45%;
-            position: absolute;
-            color: #f1f1f1;
-            text-decoration: wavy;
-            top: 8%
-        }
-
-        .info>div>h3 {
-            
-            text-align: center;
-        }
-
-        .info>div {
-         
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            flex-direction: row;
-            margin: 6%;
-            /* padding: 10px 15px; */
-            font-size: 30px;
-            /* text-align: center; */
-            font-size: larger;
-            font-weight: bolder;
-        }
-
-        .info>div>p {
-            text-align: left;
-            /* height: 60px;
-            width: 60px; */
-            /* padding: 30px; */
-        }
-
-
-        .box {
-            filter: drop-shadow(10px 10px 0px #f1f1f2);
-
-            background-color: #a7a5a5;
-            border-radius: 5%;
-            opacity: 0.5;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            flex-direction: column;
-            /* width: 13.4%;
-            top: 21%;
-            height: 19%;
-            padding: 50px;
-            margin: 20px; */
-            z-index: -1;
-
-        }
-
-        .bottom-bar {
-            border: 1px solid rgb(236, 180, 26);
-            position: relative;
-            margin-top: auto;
-            text-align: center;
-            color:#f1f1f1;
-
-        }
-
-        #table_info {
-            font-family: Arial, Helvetica, sans-serif;
-            width: 50%;
-            position: relative;
-            top: -40px;
-            left: 25%;
-
-        }
-
-        #table_info td,
-        #table_info th {
-            border: 1px solid #ddd;
-            border-style:initial;
-            padding: 8px;
-            
-        }
-
-        #table_info tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        #table_info tr:hover {
-            background-color: #ddd;
-        }
-
-        #table_info th {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: left;
-            background-color: #414141;
-            color: white;
-        }
-
-        .form_contact > h1
-        {
-            text-align: center;
-            color:#f1f1f1 ;
-        }
-
-        input[type=text],
-        select {
-            display: inline-flex;
-            
-            width: 25%;
-            padding: 12px 25px;
-            margin-left:2%;
-        
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            box-sizing:border-box;
-        }
-
-        input[type=submit] {
-         
-            width: 25%;
-            background-color: #535554;
-            color: white;
-            padding: 14px 20px;
-            position: relative;
-            left: 39.2%;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        input[type=submit]:hover {
-            background-color: #c2cac6;
-            color:#535554;
-        }
-    </style>
 </head>
 
 <body>
@@ -208,6 +15,7 @@
         <a href="#contact">Contact</a>
         <a href="#about">About</a>
     </div>
+    <script src="script.js"></script>
 
 
 
@@ -243,7 +51,13 @@
             </div>
         </div>
     </div>
- 
+    <div style="position: relative; font-size: 30px; font-weight: bolder; left: 30%;" id="projects">
+        <p style="color:#f1f1f1;  text-align: center;">Projects</p>
+        <img id="myImage" src="photo1.png" alt="img" width="100%" height="100%">
+	<button id="changeButton">Click Here </button>
+    <script src="image_change.js"></script>
+
+    </div>
     <table id="table_info">
         <tr>
             <th>Person of Contact</th>
@@ -256,6 +70,9 @@
 
         </tr>
     </table>
+
+    <input  id="add_value" type="button" value="Add values">
+    <script src="add_value.js"></script>
 
     <div>
         <form style="color: #f1f1f1;" class="form_contact" >
@@ -273,7 +90,9 @@
                 <option value="usa">USA</option>
             </select>
 
-            <input type="submit" value="Submit">
+            <input id="button1" type="button" value="Submit">
+            <script src="button.js"></script>
+
         </form>
     </div>
     <div class="bottom-bar">
@@ -284,3 +103,4 @@
 </body>
 
 </html>
+
