@@ -39,3 +39,46 @@
             {
                 Console.WriteLine(a_zero);
             }
+
+
+
+
+            string S = "babbb";
+            int pos_a = 0;
+            int pos_b = 0;
+            bool is_a = true;
+            bool is_b = false;
+            for (int i = 0; i < S.Length; i++)
+            {
+                if (S[i] == Convert.ToChar('a'))
+                {
+                    pos_a = i;
+                    is_a = true;
+                }
+                else if (S[i] == Convert.ToChar('b'))
+                {
+                    pos_b = i;
+                    is_b = true;
+                }
+            }
+            if ((pos_a < pos_b) && is_a == true && is_b == true)
+            {
+                Console.WriteLine("True");
+            }
+            else if ((pos_a > pos_b) && is_a == true && is_b == true)
+            {
+                Console.WriteLine("false");
+            }
+            else if (is_a == true || is_b == true)
+            {
+                Console.WriteLine("true");
+            }
+            else if (is_a == true)
+            {
+                Console.WriteLine("true");
+            }
+            else
+            {
+                Console.WriteLine("False");
+            }
+
