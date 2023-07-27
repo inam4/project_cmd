@@ -82,3 +82,74 @@
                 Console.WriteLine("False");
             }
 
+
+            string S = "xzzzy";
+            string re = "";
+            string[] s_ = new string[S.Length];
+
+            bool is_x = false;
+            bool is_y = false;
+            for (int x = 0; x < S.Length; x++)
+            {
+                re = re + S[S.Length - 1 - x];
+            }
+            for (int i = 0; i < S.Length; i++)
+            {
+                s_[i] = Convert.ToString(S[i]);
+                if (S[i] == 'x')
+                {
+                    is_x = true;
+                }
+                if (S[i] == 'y')
+                {
+                    is_y = true;
+                }
+            }
+            if (is_x == false && is_y == false)
+            {
+                //return (S.Length - 1);
+            }
+
+            string p = "";
+            string j = "";
+            int pattern = 0;
+            for (int x = 0; x < S.Length; x++)
+            {
+                p = S.Substring(x, S.Length - x);
+                j = re.Substring(x, re.Length - x);
+
+                Console.WriteLine(p + " " + j);
+
+                int x_left = 0;
+                int x_right = 0;
+                int y_left = 0;
+                int y_right = 0;
+                for (int i = 0; i < p.Length; i++)
+                {
+                    if (p[i] == 'x')
+                    {
+                        x_left = x_left + 1;
+                    }
+                    else if (p[i] == 'y')
+                    {
+                        y_left = y_left + 1;
+                    }
+                }
+                for (int d = 0; d < j.Length; d++)
+                {
+
+                    if (j[d] == 'x')
+                    {
+                        x_right = x_right + 1;
+                    }
+                    else if (j[d] == 'y')
+                    {
+                        y_right = y_right + 1;
+                    }
+                }
+                if ((x_right==y_right)||(x_left==y_left))
+                {
+                    pattern = pattern + 1;
+                }
+            }
+            //Console.WriteLine(pattern);
