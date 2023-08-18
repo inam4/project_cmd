@@ -1,0 +1,29 @@
+IF EXISTS (SELECT 1 FROM sys.tables WHER EOBJECT_ID = OBJECT_ID(N'[dbo].[InActiveList]'))
+DROP TABLE [InActiveList]
+BEGIN
+	CREATE TABLE [InActiveList] (
+		ID int PRIMARY KEY IDENTITY(1,1) NOT NULL,
+		Title varchar(30) NOT NULL,
+		Content varchar (30) NOT NULL,
+		Display varchar (100) NOT NULL,
+		Checked BIT,
+)
+
+END
+
+
+INSERT INTO InActiveList (Title, Content, Display, Checked)
+VALUES
+    ('Title 1', 'Content 1', 'Display 1', 1),
+    ('Title 2', 'Content 2', 'Display 2', 1),
+    ('Title 3', 'Content 3', 'Display 3', 1);
+
+
+
+
+CREATE PROCEDURE GetInActiveList
+AS
+BEGIN
+    SELECT ID, Title, Content, Display, Checked
+    FROM InActiveList;
+END;
